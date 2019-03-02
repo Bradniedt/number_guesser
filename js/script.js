@@ -6,9 +6,9 @@ const guessText = document.getElementById('guessText');
 const submitGuess = document.getElementById('submitGuess');
 const guessInput = document.getElementById('guessInput');
 const clearGuess = document.getElementById('clearGuess');
+const resetButton = document.getElementById('resetButton');
 
 let guessCounter = 1;
-let resetButton;
 
 
 function evaluateGuess() {
@@ -26,9 +26,18 @@ function evaluateGuess() {
       }
   }
 
+
   guessCounter++;
   guessInput.value = '';
   guessInput.focus();
 }
 
+function resetGame() {
+  guessCounter = 1;
+  guessText.textContent = '';
+  lastGuess.textContent = '';
+  guessResult.textContent = '';
+}
+
 submitGuess.addEventListener('click', evaluateGuess);
+resetButton.addEventListener('click', resetGame);
