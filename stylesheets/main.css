@@ -1,0 +1,15 @@
+#resetButton:enabled {
+  color: red;
+}
+
+#clearGuess:enabled {
+  color: red;
+}
+
+#clearGuess {
+  background: blue;
+}
+
+body {
+  background: green;
+}
