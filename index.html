@@ -2,13 +2,19 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
     <title></title>
   </head>
-  <body>
-    <h1>Number Guesser</h1>
-    <input type="text" placeholder="Enter your guess" id="guessInput">
-    <input type="submit" value="Guess" id="submitGuess">
-    <input type="button" value="Clear" id="clearGuess">
+  <body id="theBody">
+    <header><h1 id="number">Number</h1> <h1 id="guesser">Guesser</h1></header>
+
+    <section id="game-section">
+      <p><input type="text" placeholder="Enter your guess" id="guessInput"></p>
+      <p><input type="submit" value="Guess" id="submitGuess">
+      <input type="button" value="Clear" id="clearGuess"></p>
+    </section>
 
     <section id="results">
       <p id="guessText"></p>

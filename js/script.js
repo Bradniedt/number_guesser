@@ -7,6 +7,7 @@ const submitGuess = document.getElementById('submitGuess');
 const guessInput = document.getElementById('guessInput');
 const clearGuess = document.getElementById('clearGuess');
 const resetButton = document.getElementById('resetButton');
+const body = document.getElementById('theBody');
 
 
 let guessCounter = 1;
@@ -23,9 +24,9 @@ function evaluateGuess() {
         gameOver();
       } else {
           if (userGuess < randomNumber) {
-            guessResult.textContent = "That is too low.";
+            guessResult.textContent = "That is too low";
           } else if (userGuess > randomNumber) {
-            guessResult.textContent = "That is too high.";
+            guessResult.textContent = "That is too high";
           }
       }
   } else if (Number.isInteger(userGuess)) {
@@ -52,6 +53,28 @@ function clearNumber() {
   guessInput.value = '';
 }
 
+function disableClear() {
+  if (guessInput.value === '') {
+    document.getElementById('clearGuess').disabled = true;
+  } else {
+    document.getElementById('clearGuess').disabled = false;
+  }
+}
+
+function disableReset() {
+  if (guessCounter === 1) {
+    document.getElementById('resetButton').disabled = true;
+  } else {
+    document.getElementById('resetButton').disabled = false;
+  }
+}
+
 submitGuess.addEventListener('click', evaluateGuess);
 resetButton.addEventListener('click', resetGame);
 clearGuess.addEventListener('click', clearNumber);
+guessInput.addEventListener('focus', disableReset);
+body.addEventListener('mouseover', disableReset);
+body.addEventListener('mouseover', disableClear);
+guessInput.addEventListener('focus', disableClear);
+guessInput.addEventListener('keyup', disableClear);
+submitGuess.addEventListener('click', disableReset);
