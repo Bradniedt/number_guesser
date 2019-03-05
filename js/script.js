@@ -24,9 +24,9 @@ function evaluateGuess() {
         gameOver();
       } else {
           if (userGuess < randomNumber) {
-            guessResult.textContent = "That is too low.";
+            guessResult.textContent = "That is too low";
           } else if (userGuess > randomNumber) {
-            guessResult.textContent = "That is too high.";
+            guessResult.textContent = "That is too high";
           }
       }
   } else if (Number.isInteger(userGuess)) {
