@@ -28,7 +28,7 @@ open index.html
 
 * Enter a low number and a high number, and click on the button labeled "Set Numbers"
 
-![Enter range numbers]('./images/one.png')
+![Enter range numbers](./images/one.png)
 
 
 ## Created with
