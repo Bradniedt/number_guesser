@@ -1,10 +1,13 @@
-let randomNumber = Math.floor(Math.random() * 100) + 1;
+var randomNumber = Math.floor(Math.random() * 100) + 1;
 const guesses = document.getElementById('guesses');
 const guessResult = document.getElementById('guessResult');
 const lastGuess = document.getElementById('lastGuess');
 const guessText = document.getElementById('guessText');
 const submitGuess = document.getElementById('submitGuess');
+const submitNumber = document.getElementById('submitNumber');
 const guessInput = document.getElementById('guessInput');
+const lowNumInput = document.getElementById('numberInputLow');
+const highNumInput = document.getElementById('numberInputHigh');
 const clearGuess = document.getElementById('clearGuess');
 const resetButton = document.getElementById('resetButton');
 const body = document.getElementById('theBody');
@@ -69,6 +72,29 @@ function disableReset() {
   }
 }
 
+function setRangeRandom() {
+  lowNum = lowNumInput.value;
+  highNum = highNumInput.value;
+  var calcNum = (highNum - lowNum +1);
+  randomNumber = Math.floor(Math.random() * (highNum - lowNum + 1) + lowNum);
+}
+
+function setRange(min, max) {
+  console.log(min);
+  randomNumber = Math.floor(Math.random() * (highNum - lowNum + 1) + lowNum);
+}
+
+function setWinRange() {
+  var newLowNum = (parseInt(lowNum) - 10);
+  var newHighNum = (parseInt(highNum) + 10);
+  randomNumber = Math.floor(Math.random() * (newHighNum - newLowNum + 1) + newLowNum);
+}
+
+function gameOver() {
+  alert('Sweet win! Lets up the ante by setting your low number lower by 10, and your high number higher by 10.');
+  setWinRange();
+}
+
 submitGuess.addEventListener('click', evaluateGuess);
 resetButton.addEventListener('click', resetGame);
 clearGuess.addEventListener('click', clearNumber);
@@ -78,3 +104,4 @@ body.addEventListener('mouseover', disableClear);
 guessInput.addEventListener('focus', disableClear);
 guessInput.addEventListener('keyup', disableClear);
 submitGuess.addEventListener('click', disableReset);
+submitNumber.addEventListener('click', setRangeRandom);
