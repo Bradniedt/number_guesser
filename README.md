@@ -30,6 +30,24 @@ open index.html
 
 ![Enter range numbers](./images/one.png)
 
+* Enter a guess into the input that says "Enter your guess", and click "guess"
+
+![Enter your guess](./images/two.png)
+
+* The game will tell you if your guess was too low, too high, or correct.
+
+![Enter your guess](./images/three.png)
+
+* When you guess correctly, the game will show an alert, and will set the range of numbers to be wider.
+
+![Enter your guess](./images/four.png)
+
+* If you want to clear your guess before submitting, you can click the "clear" button.
+
+* If you'd like to reset the game to have a new range, press the "reset" button, and enter new numbers.
+
+
+
 
 ## Created with
 
