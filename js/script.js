@@ -79,11 +79,6 @@ function setRangeRandom() {
   randomNumber = Math.floor(Math.random() * (highNum - lowNum + 1) + lowNum);
 }
 
-function setRange(min, max) {
-  console.log(min);
-  randomNumber = Math.floor(Math.random() * (highNum - lowNum + 1) + lowNum);
-}
-
 function setWinRange() {
   var newLowNum = (parseInt(lowNum) - 10);
   var newHighNum = (parseInt(highNum) + 10);
