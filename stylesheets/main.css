@@ -21,7 +21,7 @@ input {
   margin-top: 50px;
 }
 
-#game-section, #results {
+#number-section, #game-section, #results {
   width: 60%;
   margin-left: 20%;
   text-align: center;
@@ -41,11 +41,11 @@ input {
   margin-left: 15px;
 }
 
-#clearGuess, #submitGuess {
+#clearGuess, #submitGuess, #numberInputLow, #numberInputHigh {
   width: 23%;
 }
 
-#submitGuess, #clearGuess, #resetButton {
+#submitGuess, #clearGuess, #resetButton, #submitNumber {
   background: #929497;
   color: #FFF;
   border-radius: 10px;
@@ -60,7 +60,7 @@ input {
   width: 50%;
 }
 
-#clearGuess:hover, #submitGuess:hover, #resetButton:hover {
+#clearGuess:hover, #submitGuess:hover, #resetButton:hover, #submitNumber:hover {
   background: #EB008B;
 }
 
