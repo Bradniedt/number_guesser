@@ -1,8 +1,7 @@
 var randomNumber = Math.floor(Math.random() * 100) + 1;
-const guesses = document.getElementById('guesses');
-const guessResult = document.getElementById('guessResult');
-const lastGuess = document.getElementById('lastGuess');
-const guessText = document.getElementById('guessText');
+var guessResult = document.getElementById('guessResult');
+var lastGuess = document.getElementById('lastGuess');
+var guessText = document.getElementById('guessText');
 const submitGuess = document.getElementById('submitGuess');
 const submitNumber = document.getElementById('submitNumber');
 const guessInput = document.getElementById('guessInput');
@@ -20,8 +19,10 @@ function evaluateGuess() {
   let userGuess = Number(guessInput.value);
   guessText.textContent = 'Your last guess was:';
   lastGuess.textContent = String(userGuess);
+  low = parseInt(lowNumInput.value);
+  high= parseInt(highNumInput.value);
 
-  if (userGuess >= 1 && userGuess <= 100) {
+  if (userGuess >= low && userGuess <= high) {
       if (userGuess === randomNumber) {
         guessResult.textContent = 'BOOM!';
         gameOver();
@@ -33,7 +34,7 @@ function evaluateGuess() {
           }
       }
   } else if (Number.isInteger(userGuess)) {
-    alert('You can only enter a guess between 1 and 100! Try again');
+    alert("You can only enter a guess between " + low + " and " + high + ". Try again!");
   } else {
     alert('You can only enter numerical guesses!');
   }
@@ -73,8 +74,8 @@ function disableReset() {
 }
 
 function setRangeRandom() {
-  lowNum = lowNumInput.value;
-  highNum = highNumInput.value;
+  var lowNum = lowNumInput.value;
+  var highNum = highNumInput.value;
   var calcNum = (highNum - lowNum +1);
   randomNumber = Math.floor(Math.random() * (highNum - lowNum + 1) + lowNum);
 }
